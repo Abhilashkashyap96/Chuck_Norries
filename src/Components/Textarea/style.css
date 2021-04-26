@@ -1,0 +1,11 @@
+#textArea{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-flow: column;
+}
+#textArea #joke{
+    height: 200px;
+    width: 350px;
+    background-color: rgb(97, 97, 255);
+}
