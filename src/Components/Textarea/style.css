@@ -7,5 +7,17 @@
 #textArea #joke{
     height: 200px;
     width: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: rgb(97, 97, 255);
+    color: white;
+    text-align: center;
+}
+#textArea .btn{
+    outline: none;
+    border: none;
+    margin-top: 50px;
+    color: rgb(97, 97, 255);
+    background-color: white;
 }

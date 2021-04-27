@@ -2,18 +2,13 @@ import React, { Component } from "react";
 import "./style.css";
 
 export class Button extends Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     return (
       <div id='button'>
         <div id="btn">
-          {this.props.data.map((appData) => {
+          {this.props.data.map((appData, index) => {
             return (
-              <>
-                <button className="btn" onClick={this.props.fetchJokes()}>{appData}</button>
-              </>
+              <button key={index} className="btn" onClick={ () => this.props.fetchJokes(appData)}>{appData}</button>
             );
           })}
         </div>

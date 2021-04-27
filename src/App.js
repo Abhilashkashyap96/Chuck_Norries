@@ -7,7 +7,10 @@ class App extends Component {
     super(props);
     this.state = {
       data: [],
-      jokes:[]
+      jokes:{
+        categories: [],
+        value: ""
+      }
     };
   }
   componentDidMount() {
@@ -33,9 +36,11 @@ class App extends Component {
     }).then((response) => {
       if (response.ok) {
         response.json().then((result) => {
-          console.log(result)
           this.setState({
-            jokes: result,
+            jokes: {
+              categories: result.categories || [],
+              value: result.value || ""
+            },
           });
         });
       }
@@ -43,10 +48,10 @@ class App extends Component {
   }
   render() {
     return (
-      <>
+      <div id="main">
         <Button data={this.state.data} fetchJokes={this.fetchJokes} />
-        <TextArea data={this.state.data}/>
-      </>
+        <TextArea jokes={this.state.jokes} data={this.state.data} fetchJokes={this.fetchJokes}/>
+      </div>
     );
   }
 }
